@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Head content remains consistent with the index.html -->
+    <!-- ... -->
+</head>
+<body>
+<!-- Date Selection Page -->
+<div class="container">
+    <div class="message">Primero escoge el día que pueda verte.</div>
+    <div class="options-container">
+        <button class="date-option" onclick="storeSelectionAndProceed('date', 'Sábado 2/17')">Sábado 2/17</button>
+        <button class="date-option" onclick="storeSelectionAndProceed('date', 'Domingo 2/18')">Domingo 2/18</button>
+    </div>
+</div>
+
+<script>
+    function storeSelectionAndProceed(storageKey, selection) {
+        sessionStorage.setItem(storageKey, selection);
+        window.location.href = 'yes-food-selection.html'; // Navigate to the food selection page
+    }
+</script>
+</body>
+</html>

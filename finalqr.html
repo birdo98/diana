@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Head content remains consistent with the index.html -->
+    <!-- ... -->
+</head>
+<body>
+<!-- Final QR Code Page -->
+<div class="container">
+    <div class="message">Ya es todo, ahora nomás mándame foto/captura de este código por favor, y nos vemos muy pronto!</div>
+    <div class="qr-container">
+        <img id="qr-code" src="" alt="QR Code">
+        <!-- Replace 'path-to-gif1.gif' with the actual path to your GIF -->
+        <img src="https://pbs.twimg.com/media/FmraJbkWAAMMNTm?format=jpg&name=small" alt="GIF" style="width:100px;height:100px;">
+    </div>
+</div>
+
+<script>
+    function determineQRCode() {
+        // Map selections to QR codes
+        const selectionMap = {
+            'Sábado 2/17Italiana': 'https://www.publicdomainpictures.net/pictures/20000/velka/qr-code.jpg',
+            'Sábado 2/17Mariscos': 'https://internationalbarcodes.com/wp-content/uploads/sites/95/2021/04/INTBC-qr-1024x1024.png',
+            'Sábado 2/17Mar': 'https://canadabarcodes.ca/wp-content/uploads/sites/201/2021/04/Can.png',
+            'Domingo 2/18Italiana': 'https://www.researchgate.net/profile/Hafiza-Abas/publication/288303807/figure/fig1/AS:311239419940864@1451216668048/An-example-of-QR-code.png',
+            'Domingo 2/18Mariscos': 'https://cdn.britannica.com/17/155017-050-9AC96FC8/Example-QR-code.jpg',
+            'Domingo 2/18Mar': 'https://barcode1.ie/wp-content/assets/sites/14/1ie-Static.jpg',
+        };
+        const dateSelection = sessionStorage.getItem('date');
+        const foodSelection = sessionStorage.getItem('food');
+        const qrCode = selectionMap[dateSelection + foodSelection];
+        document.getElementById('qr-code').src = qrCode;
+    }
+
+    window.onload = determineQRCode;
+</script>
+</body>
+</html>
