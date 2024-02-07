@@ -16,6 +16,10 @@
 </div>
 
 <script>
+        function storeSelectionAndProceed(storageKey, selection) {
+        sessionStorage.setItem(storageKey, selection);
+        window.location.href = 'finalqr.html'; // Navigate to the food selection page
+    }
     // Reuse the same script from the date selection page
 </script>
 </body>
